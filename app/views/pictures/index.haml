@@ -1,0 +1,39 @@
+%table
+  %thead
+    %tr
+      %th{"data-sort" => "int"} int
+      %th{"data-sort" => "int"} 
+      %th{"data-sort" => "string"} 
+      %th{"data-sort" => "string"} created_at
+      %th{"data-sort" => "float"} highest_rating
+      %th{"data-sort" => "float"} rating
+      %th{"data-sort" => "int"} times_viewed
+      %th{"data-sort" => "int"} votes_count
+      %th{"data-sort" => "int"} comments_count
+      %th{"data-sort" => "float"} ratio
+  %tbody
+    - @p.each do |photo|
+      %tr
+        %td
+          = photo['nb']
+        %td
+          =image_tag photo['image_url']
+        %td
+          = photo['name']
+        %td
+          = photo['created_at']
+        %td
+          = photo['highest_rating']
+        %td
+          = photo['rating']
+        %td
+          = photo['times_viewed']
+        %td
+          = photo['votes_count']
+        %td
+          = photo['comments_count']
+        %td
+          = photo['times_viewed'].to_f/photo['votes_count'].to_f
+
+
+= @avg_rating

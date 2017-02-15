@@ -1,0 +1,16 @@
+= form_for @itinerary do |f|
+  - if @itinerary.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@itinerary.errors.count, "error")} prohibited this itinerary from being saved:"
+      %ul
+        - @itinerary.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :origin
+    = f.text_field :origin
+  .field
+    = f.label :destination
+    = f.number_field :destination
+  .actions
+    = f.submit 'Save'

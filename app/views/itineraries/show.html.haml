@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Origin:
+  = @itinerary.origin
+%p
+  %b Destination:
+  = @itinerary.destination
+
+= link_to 'Edit', edit_itinerary_path(@itinerary)
+\|
+= link_to 'Back', itineraries_path

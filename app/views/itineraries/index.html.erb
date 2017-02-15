@@ -1,0 +1,17 @@
+<div id="over_map">
+<% @all_itineraries.each do |itinerary| %>
+<font color="<%= itinerary.color %>">
+<span>
+	itinéraire <%= itinerary.id %>
+</span>
+<span id="distance<%= itinerary.id %>"></span>
+<span id="duration<%= itinerary.id %>"></span>
+<% itinerary.places.each do |place| %>
+	<%= place.label %>
+<% end %>
+</font>
+<br />
+<% end %>
+</div>
+
+<div id="map-canvas"></div>
